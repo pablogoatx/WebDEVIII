@@ -12,25 +12,25 @@ import com.exceptions.ResourceNotFoundException;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-        @ExceptionHandler(ProductNotFoundException.class)
-        public ResponseEntity<ErrorDto> handleProductNotFoundException(
-                        ProductNotFoundException ex) {
+    @ExceptionHandler(ProductNotFoundException.class)
+    public ResponseEntity<ErrorDto> handleProductNotFoundException(
+            ProductNotFoundException ex) {
 
-                return ResponseEntity
-                                .status(HttpStatus.NOT_FOUND)
-                                .body(new ErrorDto(
-                                                404,
-                                                ex.getMessage()));
-        }
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorDto(
+                        404,
+                        ex.getMessage()));
+    }
 
-        @ExceptionHandler(ResourceNotFoundException.class)
-        public ResponseEntity<ErrorDto> handleResourceNotFoundException(
-                        ResourceNotFoundException ex) {
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ErrorDto> handleResourceNotFoundException(
+            ResourceNotFoundException ex) {
 
-                return ResponseEntity
-                                .status(HttpStatus.NOT_FOUND)
-                                .body(new ErrorDto(
-                                                404,
-                                                ex.getMessage()));
-        }
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorDto(
+                        404,
+                        ex.getMessage()));
+    }
 }
